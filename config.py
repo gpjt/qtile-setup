@@ -97,7 +97,7 @@ for i in groups:
 
 layouts = [
     layout.Max(),
-    layout.Stack(num_stacks=2)
+    layout.Stack(border_focus="009900", num_stacks=2)
 ]
 
 widget_defaults = dict(
