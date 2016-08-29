@@ -110,12 +110,12 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.TextBox("my config", name="default"),
-                widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %H:%M'),
+                widget.GroupBox(active="66ff66", inactive="009900"),
+                widget.Prompt(foreground="66ff66"),
+                widget.WindowName(foreground="66ff66"),
+                widget.TextBox("my config", name="default", foreground="66ff66"),
+                widget.Systray(foreground="66ff66"),
+                widget.Clock(format='%Y-%m-%d %a %H:%M', foreground="66ff66"),
             ],
             30,
         ),
