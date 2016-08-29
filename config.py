@@ -115,7 +115,7 @@ screens = [
                 widget.WindowName(),
                 widget.TextBox("my config", name="default"),
                 widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
         ),
