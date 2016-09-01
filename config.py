@@ -82,6 +82,17 @@ keys = [
         lazy.layout.client_to_next()
     ),
 
+    # Add/delete stacks
+    Key(
+        [mod], "i",
+        lazy.layout.add()
+    ),
+    Key(
+        [mod], "o",
+        lazy.layout.delete()
+    ),
+
+
     # Swap panes of split stack
     Key(
         [mod, "shift"], "space",
@@ -115,7 +126,7 @@ keys = [
     Key([mod], "w", lazy.window.kill()),
 ]
 
-groups = [Group(i) for i in "asdfuiop"]
+groups = [Group(i) for i in "1234567890"]
 
 for i in groups:
     # mod1 + letter of group = switch to group
