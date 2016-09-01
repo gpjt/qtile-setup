@@ -24,9 +24,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os
+import subprocess
+
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.command import lazy
-from libqtile import layout, bar, widget
+from libqtile import bar, layout, hook, widget
+
+
+@hook.subscribe.startup_once
+def autostart():
+    script = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.call([script])
+
 
 mod = "mod4"
 
@@ -96,8 +106,8 @@ for i in groups:
     )
 
 layouts = [
+    layout.Stack(border_focus="009900", num_stacks=2),
     layout.Max(),
-    layout.Stack(border_focus="009900", num_stacks=2)
 ]
 
 widget_defaults = dict(
