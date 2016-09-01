@@ -73,6 +73,12 @@ keys = [
         lazy.layout.rotate()
     ),
 
+    # Move current window to next stack
+    Key(
+        [mod, "control"], "space",
+        lazy.layout.client_to_next()
+    ),
+
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -81,6 +87,8 @@ keys = [
         [mod, "shift"], "Return",
         lazy.layout.toggle_split()
     ),
+
+    # Start a terminal
     Key([mod], "Return", lazy.spawn("gnome-terminal")),
 
     # Toggle between different layouts as defined below
