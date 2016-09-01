@@ -102,11 +102,15 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
-    Key([mod], "w", lazy.window.kill()),
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
+
+    # Mod-r to start a program
     Key([mod], "r", lazy.spawncmd()),
+
+    # Mod-w to kill window
+    Key([mod], "w", lazy.window.kill()),
 ]
 
 groups = [Group(i) for i in "asdfuiop"]
