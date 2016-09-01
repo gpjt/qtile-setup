@@ -156,7 +156,11 @@ screens = [
             [
                 widget.GroupBox(active="66ff66", inactive="009900"),
                 widget.Prompt(),
-		widget.CPUGraph(),
+		widget.CPUGraph(
+                    border_color="009900",
+                    fill_color="66ff66",
+                    graph_color="66ff66"
+                ),
 		widget.Memory(),
 		widget.Net(interface="eno1"),
                 widget.WindowName(),
