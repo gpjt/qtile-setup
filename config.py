@@ -122,9 +122,9 @@ for i in groups:
         Key([mod], i.name, lazy.group[i.name].toscreen())
     )
 
-    # mod1 + shift + letter of group = switch to & move focused window to group
+    # mod1 + control + letter of group = switch to & move focused window to group
     keys.append(
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name))
+        Key([mod, "control"], i.name, lazy.window.togroup(i.name))
     )
 
 layouts = [
