@@ -112,6 +112,7 @@ layouts = [
 
 widget_defaults = dict(
     font='DejaVu Sans Mono',
+    foreground="66ff66",
     fontsize=16,
     padding=3,
 )
@@ -121,10 +122,10 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(active="66ff66", inactive="009900"),
-                widget.Prompt(foreground="66ff66"),
-                widget.WindowName(foreground="66ff66"),
-                widget.Systray(foreground="66ff66"),
-                widget.Clock(format='%Y-%m-%d %a %H:%M', foreground="66ff66"),
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.Systray(),
+                widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
         ),
