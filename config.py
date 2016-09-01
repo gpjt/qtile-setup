@@ -123,6 +123,10 @@ screens = [
             [
                 widget.GroupBox(active="66ff66", inactive="009900"),
                 widget.Prompt(),
+		widget.CPUGraph(),
+		widget.Memory(),
+		widget.Net(interface="eno1"),
+		widget.DebugInfo(),
                 widget.WindowName(),
                 widget.Systray(),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
