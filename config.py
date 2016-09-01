@@ -93,7 +93,7 @@ keys = [
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
     Key(
-        [mod, "shift"], "Return",
+        [mod], "minus",
         lazy.layout.toggle_split()
     ),
 
