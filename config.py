@@ -92,8 +92,7 @@ keys = [
         lazy.layout.delete()
     ),
 
-
-    # Swap panes of split stack
+    # Rotate panes of split stack
     Key(
         [mod, "shift"], "space",
         lazy.layout.rotate()
