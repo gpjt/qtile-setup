@@ -97,14 +97,14 @@ keys = [
         lazy.layout.toggle_split()
     ),
 
-    # Start a terminal
-    Key([mod], "Return", lazy.spawn("gnome-terminal")),
-
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
+
+    # Start a terminal
+    Key([mod], "Return", lazy.spawn("gnome-terminal")),
 
     # Mod-r to start a program
     Key([mod], "r", lazy.spawncmd()),
