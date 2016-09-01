@@ -94,7 +94,7 @@ keys = [
 
     # Rotate panes of split stack
     Key(
-        [mod, "shift"], "space",
+        [mod], "Tab",
         lazy.layout.rotate()
     ),
 
@@ -109,7 +109,7 @@ keys = [
     ),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout()),
+    Key([mod, "shift"], "Tab", lazy.next_layout()),
 
     # Session management
     Key([mod, "control"], "r", lazy.restart()),
