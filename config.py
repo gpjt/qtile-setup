@@ -63,8 +63,22 @@ keys = [
 
     # Switch window focus to other pane(s) of stack
     Key(
-        [mod], "space",
+        [mod], "h",
+        lazy.layout.previous()
+    ),
+    Key(
+        [mod], "l",
         lazy.layout.next()
+    ),
+
+    # Move current window to between stacks
+    Key(
+        [mod, "control"], "h",
+        lazy.layout.client_to_previous()
+    ),
+    Key(
+        [mod, "control"], "l",
+        lazy.layout.client_to_next()
     ),
 
     # Swap panes of split stack
@@ -73,11 +87,6 @@ keys = [
         lazy.layout.rotate()
     ),
 
-    # Move current window to next stack
-    Key(
-        [mod, "control"], "space",
-        lazy.layout.client_to_next()
-    ),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
