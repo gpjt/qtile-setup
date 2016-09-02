@@ -6,7 +6,10 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(active="66ff66", inactive="006600"),
+                widget.GroupBox(
+                    active="66ff66", inactive="006600",
+                    this_current_screen_border="66ff66", this_screen_border="006600", other_screen_border="004400"
+                ),
                 widget.TextBox(text="/ net:"),
                 widget.Net(interface="eth2"),
                 widget.TextBox(text="/ win:"),
@@ -22,7 +25,10 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(active="66ff66", inactive="006600"),
+                widget.GroupBox(
+                    active="66ff66", inactive="006600",
+                    this_current_screen_border="66ff66", this_screen_border="006600", other_screen_border="004400"
+                ),
                 widget.TextBox(text="/ mem:"),
                 widget.Memory(),
                 widget.TextBox(text="/ disk:"),
@@ -40,7 +46,10 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(active="66ff66", inactive="006600"),
+                widget.GroupBox(
+                    active="66ff66", inactive="006600",
+                    this_current_screen_border="66ff66", this_screen_border="006600", other_screen_border="004400"
+                ),
                 widget.TextBox(text="/ cpu:"),
                 widget.CPUGraph(
                     border_color="006600",
