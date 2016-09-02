@@ -155,20 +155,23 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(active="66ff66", inactive="009900"),
-                widget.Prompt(),
+                widget.TextBox(text="/ net:"),
 		widget.Net(interface="eno1"),
-                widget.TextBox(text="/"),
+                widget.TextBox(text="/ mem:"),
 		widget.Memory(),
-                widget.TextBox(text="/"),
+                widget.TextBox(text="/ disk:"),
                 widget.DF(visible_on_warn=False, format="{f}{m}/{s}{m}"),
+                widget.TextBox(text="/ cpu:"),
 		widget.CPUGraph(
                     border_color="009900",
                     fill_color="66ff66",
                     graph_color="66ff66"
                 ),
-                widget.ThermalSensor(),
-                widget.Spacer(length=10),
+                widget.TextBox(text="/ temp:"),
+                widget.ThermalSensor(foreground="66ff66"),
+                widget.TextBox(text="/ win:"),
                 widget.WindowName(),
+                widget.Prompt(),
                 widget.Systray(),
                 widget.Volume(emoji=True),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
