@@ -157,7 +157,7 @@ screens = [
                 widget.GroupBox(active="66ff66", inactive="009900"),
                 widget.Prompt(),
 		widget.Net(interface="eno1"),
-                widget.Sep(),
+                widget.TextBox(text="/"),
 		widget.Memory(),
 		widget.CPUGraph(
                     border_color="009900",
