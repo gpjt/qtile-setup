@@ -139,7 +139,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Stack(border_focus="009900", num_stacks=2),
+    layout.Stack(border_focus="006600", num_stacks=2),
     layout.Max(),
 ]
 
@@ -154,7 +154,7 @@ screens = [
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(active="66ff66", inactive="009900"),
+                widget.GroupBox(active="66ff66", inactive="006600"),
                 widget.TextBox(text="/ net:"),
 		widget.Net(interface="eno1"),
                 widget.TextBox(text="/ mem:"),
@@ -163,7 +163,7 @@ screens = [
                 widget.DF(visible_on_warn=False, format="{f}{m}/{s}{m}"),
                 widget.TextBox(text="/ cpu:"),
 		widget.CPUGraph(
-                    border_color="009900",
+                    border_color="006600",
                     fill_color="66ff66",
                     graph_color="66ff66"
                 ),
