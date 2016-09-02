@@ -1,5 +1,6 @@
-from libqtile.config import Screen
+from libqtile.config import Key, Screen
 from libqtile import bar, widget
+from libqtile.command import lazy
 
 
 screens = [
@@ -70,3 +71,17 @@ screens = [
     ),
 ]
 
+extra_keys = [
+    Key(
+        ["mod4"], "i",
+        lazy.to_screen(0)
+    ),
+    Key(
+        ["mod4"], "o",
+        lazy.to_screen(1)
+    ),
+    Key(
+        ["mod4"], "p",
+        lazy.to_screen(2)
+    ),
+]

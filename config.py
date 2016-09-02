@@ -150,7 +150,9 @@ widget_defaults = dict(
     padding=3,
 )
 
-from local_config import screens
+from local_config import screens, extra_keys
+keys += extra_keys
+
 
 # Drag floating layouts.
 mouse = [
