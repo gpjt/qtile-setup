@@ -159,11 +159,14 @@ screens = [
 		widget.Net(interface="eno1"),
                 widget.TextBox(text="/"),
 		widget.Memory(),
+                widget.TextBox(text="/"),
+                widget.DF(visible_on_warn=False, format="{f}{m}/{s}{m}"),
 		widget.CPUGraph(
                     border_color="009900",
                     fill_color="66ff66",
                     graph_color="66ff66"
                 ),
+                widget.ThermalSensor(),
                 widget.Spacer(length=10),
                 widget.WindowName(),
                 widget.Systray(),
