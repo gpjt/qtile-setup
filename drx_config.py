@@ -1,17 +1,46 @@
 from libqtile.config import Screen
 from libqtile import bar, widget
 
+
 screens = [
     Screen(
         bottom=bar.Bar(
             [
                 widget.GroupBox(active="66ff66", inactive="006600"),
                 widget.TextBox(text="/ net:"),
-                widget.Net(interface="eno1"),
+                widget.Net(interface="eth2"),
+                widget.TextBox(text="/ win:"),
+                widget.WindowName(),
+                widget.Prompt(),
+                widget.Systray(),
+                widget.Volume(),
+                widget.Clock(format='%Y-%m-%d %a %H:%M'),
+            ],
+            30,
+        ),
+    ),
+    Screen(
+        bottom=bar.Bar(
+            [
+                widget.GroupBox(active="66ff66", inactive="006600"),
                 widget.TextBox(text="/ mem:"),
                 widget.Memory(),
                 widget.TextBox(text="/ disk:"),
                 widget.DF(visible_on_warn=False, format="{f}{m}/{s}{m}"),
+                widget.TextBox(text="/ win:"),
+                widget.WindowName(),
+                widget.Prompt(),
+                widget.Systray(),
+                widget.Volume(),
+                widget.Clock(format='%Y-%m-%d %a %H:%M'),
+            ],
+            30,
+        ),
+    ),
+    Screen(
+        bottom=bar.Bar(
+            [
+                widget.GroupBox(active="66ff66", inactive="006600"),
                 widget.TextBox(text="/ cpu:"),
                 widget.CPUGraph(
                     border_color="006600",
@@ -24,7 +53,7 @@ screens = [
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
-                widget.Volume(emoji=True),
+                widget.Volume(),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
