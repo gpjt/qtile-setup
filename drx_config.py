@@ -17,7 +17,6 @@ screens = [
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
-                widget.Volume(),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
@@ -38,7 +37,6 @@ screens = [
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
-                widget.Volume(),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
@@ -63,7 +61,6 @@ screens = [
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
-                widget.Volume(),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
@@ -73,15 +70,15 @@ screens = [
 
 extra_keys = [
     Key(
-        ["mod4"], "i",
+        ["mod4"], "u",
         lazy.to_screen(0)
     ),
     Key(
-        ["mod4"], "o",
+        ["mod4"], "i",
         lazy.to_screen(1)
     ),
     Key(
-        ["mod4"], "p",
+        ["mod4"], "o",
         lazy.to_screen(2)
     ),
 ]
