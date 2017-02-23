@@ -123,6 +123,10 @@ keys = [
 
     # Mod-w to kill window
     Key([mod], "w", lazy.window.kill()),
+
+    # Mod-t to lock screen
+    Key([mod], "t", lazy.spawn("gnome-screensaver-command -l")),
+
 ]
 
 groups = [Group(i) for i in "1234567890"]
