@@ -124,8 +124,8 @@ keys = [
     # Mod-w to kill window
     Key([mod], "w", lazy.window.kill()),
 
-    # Mod-t to lock screen
-    Key([mod], "t", lazy.spawn("gnome-screensaver-command -l")),
+    # Mod-control-k to lock screen
+    Key([mod, "control"], "k", lazy.spawn("gnome-screensaver-command -l")),
 
 ]
 
