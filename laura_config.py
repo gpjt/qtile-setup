@@ -1,5 +1,6 @@
-from libqtile.config import Screen
+from libqtile.config import Key, Screen
 from libqtile import bar, widget
+from libqtile.command import lazy
 
 screens = [
     Screen(
@@ -29,4 +30,9 @@ screens = [
     ),
 ]
 
-extra_keys = []
+extra_keys = [
+    Key(["mod4"], "Return", lazy.spawn("termite")),
+
+    # Mod-control-k to lock screen
+    Key(["mod4", "control"], "k", lazy.spawn("gnome-screensaver-command -l")),
+]
