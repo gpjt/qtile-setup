@@ -7,19 +7,6 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.GroupBox(active="66ff66", inactive="006600"),
-                widget.TextBox(text="/ net:"),
-                widget.Net(interface="wlp3s0"),
-                widget.TextBox(text="/ mem:"),
-                widget.Memory(),
-                widget.TextBox(text="/ disk:"),
-                widget.DF(visible_on_warn=False, format="{f}{m}/{s}{m}"),
-                widget.TextBox(text="/ cpu:"),
-                widget.CPUGraph(
-                    border_color="006600",
-                    fill_color="66ff66",
-                    graph_color="66ff66"
-                ),
-                widget.TextBox(text="/ win:"),
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
