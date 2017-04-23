@@ -45,21 +45,21 @@ keys = [
     # Switch between windows in current stack pane
     Key(
         [mod], "j",
-        lazy.layout.up()
+        lazy.layout.down()
     ),
     Key(
         [mod], "k",
-        lazy.layout.down()
+        lazy.layout.up()
     ),
 
     # Move windows up or down in current stack
     Key(
         [mod, "control"], "j",
-        lazy.layout.shuffle_up()
+        lazy.layout.shuffle_down()
     ),
     Key(
         [mod, "control"], "k",
-        lazy.layout.shuffle_down()
+        lazy.layout.shuffle_up()
     ),
 
     # Switch window focus to other pane(s) of stack
@@ -145,6 +145,7 @@ for i in groups:
 layouts = [
     layout.Stack(border_focus="006600", num_stacks=2),
     layout.Max(),
+    layout.TreeTab(panel_width=300),
 ]
 
 widget_defaults = dict(
