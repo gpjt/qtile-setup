@@ -145,7 +145,14 @@ for i in groups:
 layouts = [
     layout.Stack(border_focus="006600", num_stacks=2),
     layout.Max(),
-    layout.TreeTab(panel_width=300),
+    layout.TreeTab(
+        font='DejaVu Sans Mono',
+        panel_width=300, 
+        inactive_bg="000000",
+        inactive_fg="006600",
+        active_bg="000000",
+        active_fg="66ff66",
+    ),
 ]
 
 widget_defaults = dict(
