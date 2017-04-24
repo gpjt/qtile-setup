@@ -152,6 +152,8 @@ layouts = [
         inactive_fg="006600",
         active_bg="000000",
         active_fg="66ff66",
+        sections=[""],
+        section_fg="000000",
     ),
 ]
 
