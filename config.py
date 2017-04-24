@@ -146,7 +146,7 @@ layouts = [
     layout.Stack(border_focus="006600", num_stacks=2),
     layout.Max(),
     layout.TreeTab(
-        font='DejaVu Sans Mono',
+        font="DejaVu Sans Mono",
         panel_width=300, 
         inactive_bg="000000",
         inactive_fg="006600",
