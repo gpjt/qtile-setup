@@ -11,6 +11,22 @@ screens = [
                     active="66ff66", inactive="006600",
                     this_current_screen_border="66ff66", this_screen_border="006600", other_screen_border="004400"
                 ),
+                widget.TextBox(text="/ win:"),
+                widget.WindowName(),
+                widget.Prompt(),
+                widget.Systray(),
+                widget.Clock(format='%Y-%m-%d %a %H:%M'),
+            ],
+            30,
+        ),
+    ),
+    Screen(
+        bottom=bar.Bar(
+            [
+                widget.GroupBox(
+                    active="66ff66", inactive="006600",
+                    this_current_screen_border="66ff66", this_screen_border="006600", other_screen_border="004400"
+                ),
                 widget.TextBox(text="/ net:"),
                 widget.Net(interface="eth2"),
                 widget.TextBox(text="/ win:"),
@@ -80,5 +96,9 @@ extra_keys = [
     Key(
         ["mod4"], "o",
         lazy.to_screen(2)
+    ),
+    Key(
+        ["mod4"], "p",
+        lazy.to_screen(3)
     ),
 ]
