@@ -25,7 +25,6 @@ screens = [
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
-                widget.Volume(emoji=True),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,
