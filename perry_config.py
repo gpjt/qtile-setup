@@ -20,7 +20,7 @@ screens = [
                     graph_color="66ff66"
                 ),
                 widget.TextBox(text="/ temp:"),
-                widget.ThermalSensor(foreground="66ff66", tag_sensor="Physical id 0"),
+                widget.ThermalSensor(foreground="66ff66", tag_sensor="Package id 0"),
                 widget.TextBox(text="/ win:"),
                 widget.WindowName(),
                 widget.Prompt(),
