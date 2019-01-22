@@ -77,6 +77,7 @@ screens = [
 
 extra_keys = [
     Key(["mod4"], "Return", lazy.spawn("termite")),
+    Key(["mod4"], "l", lazy.spawn("slock")),
 
     Key(
         ["mod4"], "u",
