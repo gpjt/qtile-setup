@@ -142,8 +142,11 @@ for i in groups:
         Key([mod, "control"], i.name, lazy.window.togroup(i.name))
     )
 
+
+from local_config import screens, extra_keys, num_stacks
+
 layouts = [
-    layout.Stack(border_focus="006600", num_stacks=2),
+    layout.Stack(border_focus="006600", num_stacks=num_stacks),
     layout.Max(),
     layout.TreeTab(
         font="DejaVu Sans Mono",
@@ -164,7 +167,6 @@ widget_defaults = dict(
     padding=3,
 )
 
-from local_config import screens, extra_keys
 keys += extra_keys
 
 

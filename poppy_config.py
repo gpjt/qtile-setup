@@ -2,6 +2,8 @@ from libqtile.config import Key, Screen
 from libqtile import bar, widget
 from libqtile.command import lazy
 
+num_stacks = 2
+
 screens = [
     Screen(
         bottom=bar.Bar(
