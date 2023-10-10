@@ -28,7 +28,7 @@ screens = [
                 widget.Prompt(),
                 widget.Systray(),
                 widget.Clock(format='%Y-%m-%d %a'),
-                widget.TextBox(text="/ UK:"),
+                widget.TextBox(text="/ PT:"),
                 widget.Clock(format='%H:%M'),
                 widget.TextBox(text="/ UTC:"),
                 widget.Clock(format='%H:%M', timezone="UTC"),
