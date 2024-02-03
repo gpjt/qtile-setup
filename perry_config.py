@@ -10,7 +10,7 @@ screens = [
             [
                 widget.GroupBox(active="66ff66", inactive="006600"),
                 widget.TextBox(text="/ net:"),
-                widget.Net(interface="wlo1"),
+                widget.Net(interface="eno3"),
                 widget.TextBox(text="/ mem:"),
                 widget.Memory(),
                 widget.TextBox(text="/ disk:"),
