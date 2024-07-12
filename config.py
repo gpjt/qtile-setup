@@ -29,7 +29,7 @@ import os
 import subprocess
 
 from libqtile.config import Key, Group, Drag, Click
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile import layout, hook
 
 
