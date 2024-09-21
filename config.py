@@ -82,14 +82,13 @@ keys = [
         lazy.layout.client_to_next()
     ),
 
-    # Add/delete stacks
     Key(
-        [mod], "i",
-        lazy.layout.add()
+        [mod, "control"], "u",
+        lazy.layout.shrink()
     ),
     Key(
-        [mod], "o",
-        lazy.layout.delete()
+        [mod, "control"], "i",
+        lazy.layout.grow()
     ),
 
     # Rotate panes of split stack
@@ -124,9 +123,6 @@ keys = [
     # Mod-w to kill window
     Key([mod], "w", lazy.window.kill()),
 
-    # Mod-control-k to lock screen
-    Key([mod, "control"], "k", lazy.spawn("gnome-screensaver-command -l")),
-
 ]
 
 groups = [Group(i) for i in "1234567890"]
@@ -148,9 +144,10 @@ from local_config import screens, extra_keys, num_stacks
 layouts = [
     layout.Stack(border_focus="006600", num_stacks=num_stacks),
     layout.Max(),
+    layout.MonadTall(),
     layout.TreeTab(
         font="DejaVu Sans Mono",
-        panel_width=300, 
+        panel_width=300,
         inactive_bg="000000",
         inactive_fg="006600",
         active_bg="000000",

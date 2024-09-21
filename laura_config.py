@@ -21,7 +21,4 @@ screens = [
 
 extra_keys = [
     Key(["mod4"], "Return", lazy.spawn("alacritty")),
-
-    # Mod-control-k to lock screen
-    Key(["mod4", "control"], "k", lazy.spawn("gnome-screensaver-command -l")),
 ]
