@@ -139,10 +139,16 @@ for i in groups:
     )
 
 
+
 from local_config import screens, extra_keys, num_stacks
 
 layouts = [
     layout.Stack(border_focus="006600", num_stacks=num_stacks),
+]
+if num_stacks != 2:
+    layouts.append(layout.Stack(border_focus="006600", num_stacks=2))
+
+layouts += [
     layout.Max(),
     layout.MonadTall(),
     layout.TreeTab(

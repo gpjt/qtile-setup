@@ -1,10 +1,29 @@
+import re
+import subprocess
+
 from libqtile.config import Key, Screen
 from libqtile import bar, widget
 from libqtile.lazy import lazy
 
 num_stacks = 3
 
-screens = [
+
+def active_outputs():
+    """Return only outputs that are both connected _and_ have a mode set."""
+    out = subprocess.run(["xrandr", "--query"], stdout=subprocess.PIPE)
+    lines = out.stdout.decode().splitlines()
+    return [
+        line.split()[0]
+        for line in lines
+        if " connected " in line and re.search(r" \d+x\d+\+\d+\+\d+", line)
+    ]
+
+
+connected = active_outputs()
+
+screens = []
+# always put the primary (DP-2) first
+screens.append(
     Screen(
         bottom=bar.Bar(
             [
@@ -22,7 +41,10 @@ screens = [
                     graph_color="66ff66"
                 ),
                 widget.TextBox(text="/ temp:"),
-                widget.ThermalSensor(foreground="66ff66", tag_sensor="Package id 0"),
+                widget.ThermalSensor(
+                    foreground="66ff66",
+                    tag_sensor="Package id 0"
+                ),
                 widget.TextBox(text="/ win:"),
                 widget.WindowName(),
                 widget.Prompt(),
@@ -38,10 +60,38 @@ screens = [
                 widget.Clock(format='%H:%M', timezone="America/Chicago"),
             ],
             30,
-        ),
-    ),
-]
+        )
+    )
+)
+
+# only add the HDMI-1 screen if it’s currently active
+if "HDMI-1" in connected:
+    screens.append(
+        Screen(
+            bottom=bar.Bar(
+                [
+                    widget.GroupBox(active="66ff66", inactive="006600")
+                ],
+                30
+            )
+        )
+    )
+
 
 extra_keys = [
     Key(["mod4"], "Return", lazy.spawn("alacritty")),
+    # super-M → turn HDMI-1 on and reload config (adds second screen)
+    Key(
+        ["mod4"], "m",
+        lazy.spawn("xrandr --output HDMI-1 --mode 1920x2400 --pos 5120x1500 --rotate right"),
+        lazy.reload_config(),
+        desc="Enable external monitor"
+    ),
+    # super-N → turn HDMI-1 off and reload config (falls back to one screen)
+    Key(
+        ["mod4"], "n",
+        lazy.spawn("xrandr --output HDMI-1 --off"),
+        lazy.reload_config(),
+        desc="Disable external monitor"
+    ),
 ]
