@@ -22,7 +22,20 @@ def active_outputs():
 connected = active_outputs()
 
 screens = []
-# always put the primary (DP-2) first
+# only add the HDMI-0 screen if it’s currently active
+if "HDMI-0" in connected:
+    screens.append(
+        Screen(
+            bottom=bar.Bar(
+                [
+                    widget.GroupBox(active="66ff66", inactive="006600")
+                ],
+                30
+            )
+        )
+    )
+
+# always define the primary (DP-2)
 screens.append(
     Screen(
         bottom=bar.Bar(
@@ -64,33 +77,19 @@ screens.append(
     )
 )
 
-# only add the HDMI-1 screen if it’s currently active
-if "HDMI-1" in connected:
-    screens.append(
-        Screen(
-            bottom=bar.Bar(
-                [
-                    widget.GroupBox(active="66ff66", inactive="006600")
-                ],
-                30
-            )
-        )
-    )
-
-
 extra_keys = [
     Key(["mod4"], "Return", lazy.spawn("alacritty")),
-    # super-M → turn HDMI-1 on and reload config (adds second screen)
+    # super-M → turn HDMI-0 on and reload config (adds second screen)
     Key(
         ["mod4"], "m",
-        lazy.spawn("xrandr --output HDMI-1 --mode 1920x2400 --pos 5120x1500 --rotate right"),
+        lazy.spawn("xrandr --output HDMI-0 --mode 1920x2400 --pos 5120x1500 --rotate right"),
         lazy.reload_config(),
         desc="Enable external monitor"
     ),
-    # super-N → turn HDMI-1 off and reload config (falls back to one screen)
+    # super-N → turn HDMI-0 off and reload config (falls back to one screen)
     Key(
         ["mod4"], "n",
-        lazy.spawn("xrandr --output HDMI-1 --off"),
+        lazy.spawn("xrandr --output HDMI-0 --off"),
         lazy.reload_config(),
         desc="Disable external monitor"
     ),
