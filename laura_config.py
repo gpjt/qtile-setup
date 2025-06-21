@@ -32,7 +32,7 @@ screens.append(
                 widget.Clock(format='%Y-%m-%d %a %H:%M', fontsize=24),
                 widget.Systray(fontsize=24),
             ],
-            60,
+            45,
         ),
     )
 )
