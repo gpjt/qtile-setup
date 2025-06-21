@@ -26,13 +26,13 @@ screens.append(
     Screen(
         bottom=bar.Bar(
             [
-                widget.GroupBox(active="66ff66", inactive="006600"),
-                widget.WindowName(),
-                widget.Prompt(),
-                widget.Clock(format='%Y-%m-%d %a %H:%M'),
-                widget.Systray(),
+                widget.GroupBox(active="66ff66", inactive="006600", fontsize=24),
+                widget.WindowName(fontsize=24),
+                widget.Prompt(fontsize=24),
+                widget.Clock(format='%Y-%m-%d %a %H:%M', fontsize=24),
+                widget.Systray(fontsize=24),
             ],
-            30,
+            60,
         ),
     )
 )
@@ -48,6 +48,7 @@ if "DP-3-1" in connected:
             )
         )
     )
+
 if "DP-3-8" in connected:
     screens.append(
         Screen(
