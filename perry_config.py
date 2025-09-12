@@ -67,10 +67,6 @@ screens.append(
                 widget.Clock(format='%H:%M'),
                 widget.TextBox(text="/ UTC:"),
                 widget.Clock(format='%H:%M', timezone="UTC"),
-                widget.TextBox(text="/ PL:"),
-                widget.Clock(format='%H:%M', timezone="Europe/Warsaw"),
-                widget.TextBox(text="/ TX:"),
-                widget.Clock(format='%H:%M', timezone="America/Chicago"),
             ],
             30,
         )
