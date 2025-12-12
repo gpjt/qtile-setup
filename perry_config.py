@@ -64,9 +64,10 @@ screens.append(
                 widget.Volume(
                     emoji=False,
                     step=5,
+                    limit_max_volume=True,
                     get_volume_command="wpctl get-volume @DEFAULT_AUDIO_SINK@",
-                    volume_up_command="wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
-                    volume_down_command="wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+                    volume_up_command="wpctl set-volume --limit 0.75 @DEFAULT_AUDIO_SINK@ 5%+",
+                    volume_down_command="wpctl set-volume --limit 0.75 @DEFAULT_AUDIO_SINK@ 5%-",
                     mute_command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
                     check_mute_command="wpctl get-volume @DEFAULT_AUDIO_SINK@",
                     check_mute_string="[MUTED]",
