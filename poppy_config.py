@@ -27,6 +27,7 @@ screens = [
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
+                widget.StatusNotifier(),
                 widget.Clock(format='%Y-%m-%d %a %H:%M'),
             ],
             30,

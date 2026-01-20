@@ -31,6 +31,7 @@ screens.append(
                 widget.Prompt(fontsize=24),
                 widget.Clock(format='%Y-%m-%d %a %H:%M', fontsize=24),
                 widget.Systray(fontsize=24),
+                widget.StatusNotifier(fontsize=24),
             ],
             45,
         ),

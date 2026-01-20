@@ -73,6 +73,7 @@ screens.append(
                     check_mute_string="[MUTED]",
                 ),
                 widget.Systray(),
+                widget.StatusNotifier(),
                 widget.Clock(format='%Y-%m-%d %a'),
                 widget.TextBox(text="/ PT:"),
                 widget.Clock(format='%H:%M'),

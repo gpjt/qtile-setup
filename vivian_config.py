@@ -57,6 +57,7 @@ screens.append(
                 widget.WindowName(),
                 widget.Prompt(),
                 widget.Systray(),
+                widget.StatusNotifier(),
                 widget.Clock(format='%Y-%m-%d %a'),
                 widget.TextBox(text="/ PT:"),
                 widget.Clock(format='%H:%M'),
