@@ -42,11 +42,11 @@ screens.append(
             [
                 widget.GroupBox(active="66ff66", inactive="006600"),
                 widget.TextBox(text="/ net:"),
-                widget.Net(interface="eno3"),
+                widget.Net(interface="enp3s0"),
                 widget.TextBox(text="/ mem:"),
                 widget.Memory(),
                 widget.TextBox(text="/ disk:"),
-                widget.DF(visible_on_warn=False, format="{f}{m}/{s}{m}"),
+                widget.DF(visible_on_warn=False, format="{f:.2f}{m}/{s:.2f}{m}"),
                 widget.TextBox(text="/ cpu:"),
                 widget.CPUGraph(
                     border_color="006600",
